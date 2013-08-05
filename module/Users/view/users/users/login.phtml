@@ -1,0 +1,46 @@
+
+<div class="container">
+<div class="form">
+<?php
+
+
+$message='';
+
+if(isset($_POST['uname']))
+{  
+    if($_POST['uname'] == '')
+    {
+     	$message='<div class="unamemessage">please enter username</div><br>';
+    }
+    else
+    {
+     	$message='';
+    }
+}
+
+echo $message;
+$form = $this->form;
+$form->setAttribute('action', $this->url('users', array('action' => 'login')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo('<div>');
+echo $this->formRow($form->get('uname'));
+echo('</div>');
+
+echo('<div>');
+echo $this->formRow($form->get('pword'));
+
+echo('</div>');
+//echo('<left><input name="submit" type="submit" value="Submit"></left>');
+echo $this->formSubmit($form->get('submit'));
+
+echo $this->form()->closeTag();
+echo '<br>';
+?>
+<div style="text-align:center;">
+<a href="<?php echo $this->url('users',array('action'=>'forgot'));?>">Forgot Password</a> 
+
+<a href="<?php echo $this->url('users',array('action'=>'register'));?>">Register</a>   
+</div>
+</div>         

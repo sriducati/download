@@ -1,0 +1,144 @@
+
+<div class="dropzone">
+<?php foreach($result as $key=>$value):
+
+$path = $value['uploaded'];
+$ext = pathinfo($path, PATHINFO_EXTENSION);
+
+?>
+
+    <div class="dz-preview dz-image-preview dz-processing dz-success">  
+        <div class="dz-details1">    
+        <?php if ($ext=='zip' or $ext=='rar'):?>
+            <img class="data-dz-thumbnail" alt="<?php echo $value['uploaded'];?>" src="<?php echo $this->basePath().'/public/images/winzip.jpg';?>">  
+        <?php elseif($ext=='jpeg' or $ext=='gif' or $ext=='png' or $ext=='jpg'): ?>
+            <img class="data-dz-thumbnail" alt="<?php echo $value['uploaded'];?>" src="<?php echo $this->basePath().'/public/images/uploaded/'.$value['uploaded'];?>">  
+         <?php elseif($ext=='mp4' or $ext=='webm' or $ext=='ogg' or $ext=='ogv'): ?>
+             <img class="data-dz-thumbnail" alt="<?php echo $value['uploaded'];?>" src="<?php echo $this->basePath().'/public/images/video.jpg';?>">   
+        
+        <?php endif;?>
+        <div class="dz-details1hover">
+        <span class="user-text">Uploaded By: <?php echo $value['uname'];?><br>
+        Size: <?php echo $value['ImageSize'];?></span>
+        </div>
+        </div>  
+        
+     
+        <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress="" style="width: 100%;"></span></div>  
+        <div class="dz-success-mark"><span>✔</span></div>  
+        <div class="dz-error-message"><span data-dz-errormessage="sdsdsds"></span>
+        </div>
+        <?php if($ext=='jpeg' or $ext=='gif' or $ext=='png' or $ext=='jpg' or $ext=='mp4' or $ext=='ogv' or $ext=='ogg' or $ext=='webm'):?>
+       <a class="dz-remove" id="opener" onClick="record('<?php echo $value['uploaded']; ?>')">Open</a>
+        <a class="dz-remove" onClick="alert('you are about to download');" href="<?php echo $this->basePath().'/public/images/uploaded/'.$value['uploaded'];?>" download >Download</a>
+        <a class="dz-remove" onClick="deleteme('<?php echo $value['uploaded']; ?>')">Delete</a>
+       
+       <?php else:?> 
+        <a class="dz-remove" onClick="alert('you are about to download');" href="<?php echo $this->basePath().'/public/images/uploaded/'.$value['uploaded'];?>" download >Download</a>
+        <a class="dz-remove" onClick="deleteme('<?php echo $value['uploaded']; ?>')">Delete</a>
+       
+        <?php endif;?>
+    </div>
+    <?php endforeach;?>
+
+</div>
+
+
+
+        
+    <div id="dialog" title="Dialog Title">
+    <div id="info">
+    </div>
+    <div id="close"></div>
+        <div class="bigim"><img class="bigimage" style="height:92%" src=""></div>
+        
+        <div class="bigvid"><video id="v1" width="500" height="92%" controls>
+        
+          Your browser does not support the video tag.
+        </video></div>
+    
+    </div>
+
+<script>
+function deleteme(a){
+	var mapForm = document.createElement("form");
+	mapForm.method = "POST";
+	mapForm.action = "delete";
+
+	// Create an input
+	var mapInput = document.createElement("input");
+	mapInput.type = "hidden";
+	mapInput.name = "uploaded";
+	mapInput.value = a;
+	
+	// Add the input to the form
+	mapForm.appendChild(mapInput);
+
+	document.body.appendChild(mapForm);
+	
+	var frm = $(mapForm);
+	
+	mapForm.submit(function () {
+	    $.ajax({
+	        type: frm.attr('method'),
+	        url: frm.attr('action'),
+	        data: frm.serialize(),
+	        success: function (data) {
+	            alert('ok');
+	        }
+	    });
+
+	    return false;
+	});
+
+	
+}
+function record(a){
+	var b = "<?php echo $this->basePath().'/public/images/uploaded/'?>"+a;
+	$('#dialog').show();
+	var filename = a;
+	var valid_image_extensions = /(\.jpg|\.jpeg|\.gif|\.png)$/i;   
+	var valid_video_extensions = /(\.mp4|\.ogg|\.mov|\.webm|\.ogv)$/i;   
+
+
+	//alert(a.split('.').pop());
+	
+	if(valid_image_extensions.test(filename))
+	{ 
+	    $('.bigim').show();
+	    $('.bigvid').hide();
+	    
+	    $('.bigimage').attr('src', b);
+	}
+	
+	else if(valid_video_extensions.test(filename))
+	{
+	    $('.bigvid').show();
+	    $('.bigim').hide();
+	    if(a.split('.').pop()=='mp4')
+		{
+	     $('#v1').html('<source src='+b+' type="video/mp4"></source>' );
+	    }
+	    else if(a.split('.').pop()=='webm')
+	    {
+	    	$('#v1').html('<source src='+b+' type="video/webm"></source>' );
+		}
+	    else if(a.split('.').pop()=='ogv')
+	    {
+	    	$('#v1').html('<source src='+b+' type="video/ogg"></source>' );
+		}
+	}
+
+
+    $('#info').text(a);
+    $("#close").click(function() {
+    	$('#dialog').hide();
+    	});
+
+}
+
+
+</script>
+
+
+

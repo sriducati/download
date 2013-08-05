@@ -1,0 +1,28 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="<?php echo $this->url('home') ?>">GoodFeat</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                        <?php if($this->identity === null):?>
+                        <li id='li2' class="inactive"><a href="<?php echo $this->url('Upload',array('action'=>'upload')); ?>">Upload</a></li>
+                         <li id='li3' class="inactive"><a href="<?php echo $this->url('Upload',array('action'=>'upload')); ?>">Download</a></li>
+                         <li id='li4' class="inactive"><a href="<?php echo $this->url('Upload',array('action'=>'upload')); ?>">Logout</a></li>
+                        
+                        <?php else: ?>
+                       <li id='li1' class="active"><a href="<?php echo $this->url('Upload',array('action'=>'index')); ?>">Home</a></li>
+                                                 
+                       <?php endif; ?>
+                        
+                                                   
+                        
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>

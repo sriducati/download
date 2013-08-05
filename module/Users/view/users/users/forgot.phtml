@@ -1,0 +1,21 @@
+
+<div class="container">
+<?php 
+
+if($this->password)
+{
+	echo 'your new password is  '.$this->password.'<br>' ;
+
+}
+
+
+?>
+ 
+<div class="form">
+<form action="<?php echo $this->url('users',array('action'=>'forgot')) ; ?>" method='POST'>
+<div>Enter You Email:<input type='text' name='email' value=''>
+<div class="errormessage" id="fpmessage"><?php echo $this->fpmessage;?></div>
+</div>
+<input type='submit' name='submit' value='submit'>
+</form>
+</div>

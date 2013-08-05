@@ -1,0 +1,59 @@
+
+<?php 
+
+$uname='';
+$fname='';
+$lname='';
+$email='';
+$pword='';
+
+if(isset($_POST['uname']))
+{
+$uname =	 $_POST['uname'];
+}
+if(isset($_POST['fname']))
+{
+	$fname =	 $_POST['fname'];
+}
+if(isset($_POST['lname']))
+{
+	$lname =	 $_POST['lname'];
+}
+if(isset($_POST['email']))
+{
+	$email =	 $_POST['email'];
+}
+if(isset($_POST['pword']))
+{
+	$pword =	 $_POST['pword'];
+}
+
+?>
+
+<div class="container">
+<div class="form">
+<form action="<?php echo $this->url('users',array('action'=>'register')) ; ?>" method='POST'>
+<div>User Name:<input type='text' name='uname' value='<?php echo $uname;?>'>
+<div class="errormessage" id="uname"><?php echo $this->umessage;?></div>
+</div>
+
+<div>Password:<input type='password' name='pword' value='<?php echo $pword;?>' >
+<div class="errormessage" id="pword"><?php echo $this->pmessage;?></div>
+</div>
+<div>First Name:<input type='text' name='fname' value='<?php echo $fname;?>'>
+<div class="errormessage" id="fname"><?php echo $this->fmessage;?></div>
+</div>
+<div>
+Last Name:<input type='text' name='lname' value='<?php echo $lname;?>'>
+<div class="errormessage" id="lname"><?php echo $this->lmessage;?></div>
+</div>
+<div>
+Email:<input type='text' name='email' value='<?php echo $email;?>'>
+<div class="errormessage" id="email"><?php echo $this->emessage;?></div>
+</div>
+<input type='submit' name='submit' value='submit'>
+</form>
+</div>
+<script>
+
+</script>
