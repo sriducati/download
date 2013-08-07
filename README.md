@@ -9,9 +9,13 @@ so that even a beginer will be able to understand it very easily.
 Features
 --------
 1)User can upload, download and manage files through drag and drop.
+
 2)file extensions are limited to .image*,.zip/.rar and .video* but can be changed in a much simpler way.
+
 3)User can view pictures or Videos without installing any third party Plugins(without using flash).
+
 4)Application Designed using Zend Framework2,Html5,css3,Jquery,Javacsript,Mysql.
+
 5)Compleate DataBase Driven Zend Application.
 
 Screen Shots
@@ -22,7 +26,11 @@ Installation
 ------------
 
 1)Create a Zend Project Named as 'Download'.
+
 2)Refer my project Directory and start changing your code.
+
 3)Create a database Named as 'Download'.
+
 3)Dump 'download.sql' into database.
+
 4)For support Mail me at sriducati@gmail.com.
