@@ -34,3 +34,5 @@ Installation
 3)Dump 'download.sql' into database.
 
 4)For support Mail me at sriducati@gmail.com.
+
+Please Do check my New Website http://www.www.srihost.com which makes your work simpler by generating Css Style Sheet
