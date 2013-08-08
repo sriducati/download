@@ -35,4 +35,4 @@ Installation
 
 4)For support Mail me at sriducati@gmail.com.
 
-Please Do check my New Website http://www.srihost.com which makes your work simpler by generating Css Style Sheet
+Please Do check my New Website http://www.srihost.com which makes your work simpler by generating Css Code As Per Your Need.
