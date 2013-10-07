@@ -3,7 +3,7 @@ Zend Drag and Drop File Upload.
 
 Introduction
 ------------
-This is a simple Zend Framework2 Application with Drag and drop file upload functionality.Coding is written in a much simpler way
+Hi My name is Srinivas .... This is My Zend Framework2 Media Sharing Web Application with Drag and drop file upload functionality.Coding is written in a much simpler way
 so that even a beginer will be able to understand it very easily.
 
 Features
@@ -36,3 +36,5 @@ Installation
 4)For support Mail me at sriducati@gmail.com.
 
 Please Do check my New Website http://www.srihost.com which makes your work simpler by generating Css Code As Per Your Need.
+
+Also Check my Work http://www.dellconnect.info ,Iam Sure You will love it :)
