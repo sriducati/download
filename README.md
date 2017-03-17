@@ -26,7 +26,7 @@ Installation
 
 1)Create a Zend Project Named as 'Download'.
 
-2)Refer my project Directory and start changing your code.
+2)Refer project Directory.
 
 3)Create a database Named as 'Download'.
 
@@ -34,6 +34,3 @@ Installation
 
 4)For support Mail me at sriducati@gmail.com.
 
-Please Do check my New Website http://www.srihost.com which makes your work simpler by generating Css Code As Per Your Need.
-
-Also Check my Work http://www.dellconnect.info ,Iam Sure You will love it :)
